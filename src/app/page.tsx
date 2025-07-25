@@ -1,103 +1,151 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import Image from 'next/image';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+
+export default function HomePage() {
+  const certifications = [
+    {
+      src: "/certifications/pl400.png",
+      alt: "Microsoft PL‑400 (Power Platform Developer)",
+      href: "https://learn.microsoft.com/en-us/users/sudarshanawasthi-9727/credentials/certification/power-platform-functional-consultant-associate?tab=credentials-tab"
+    },
+    {
+      src: "/certifications/pl300.png",
+      alt: "Microsoft PL‑300 (Power BI Data Analyst)",
+      href: "https://learn.microsoft.com/en-us/users/sudarshanawasthi-9727/credentials/certification/data-analyst-associate?tab=credentials-tab"
+    },
+    {
+      src: "/certifications/pl900.png",
+      alt: "Microsoft PL‑900 (Power Platform Fundamentals)",
+      href: "https://learn.microsoft.com/en-us/users/sudarshanawasthi-9727/credentials/certification/power-platform-fundamentals?tab=credentials-tab"
+    },
+    {
+      src: "/certifications/az900.png",
+      alt: "Microsoft AZ‑900 (Azure Fundamentals)",
+      href: "https://learn.microsoft.com/en-us/users/sudarshanawasthi-9727/credentials/certification/azure-fundamentals?tab=credentials-tab"
+    },
+    {
+      src: "/certifications/psm1.png",
+      alt: "Professional Scrum Master™ I (PSM I)",
+      href: "https://www.credly.com/badges/562b9924-a98b-4c91-af6f-7c5956497c82"
+    },
+  ];
+
+  const projects = [
+  {
+    title: "Sales Report",
+    description: "A Power BI dashboard to analyze sales trends and regional performance.",
+    image: "/images/sales-report.png",
+    href: "/projects/sales-report"    
+  },
+  {
+    title: "FIFA World Cup Analysis",
+    description: "Interactive Streamlit app to explore FIFA World Cup stats.",
+    image: "/images/fifa.png",
+    href: "/projects/fifa"
+  },
+  {
+    title: "CIA Factbook Analysis",
+    description: "Exploratory data analysis of global facts using SQLite.",
+    image: "/images/cia.png",
+    href: "/projects/cia-factbook"
+  }
+];
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <main className="min-h-screen bg-white text-gray-900 p-8 flex flex-col items-center">
+      {/* Profile Section */}
+      <section className="text-center mb-6">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          src="/me.jpg"
+          alt="Profile picture of Sudarshan"
+          width={160}
+          height={160}
+          className="rounded-full mx-auto mb-4"
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+        <h1 className="text-4xl font-bold mb-2">👋 Hello, I'm Sudarshan Awasthi</h1>
+        <p className="text-lg text-gray-700 max-w-xl mx-auto">
+          Power Platform Consultant & Data Analyst passionate about solving real‑world problems through modern tech.
+        </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+        {/* Social Buttons */}
+        <div className="flex gap-4 justify-center mt-6">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://github.com/sudarshanAw"
             target="_blank"
             rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 transition"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            <FaGithub className="w-5 h-5" />
+            <span className="text-sm font-medium">GitHub</span>
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://www.linkedin.com/in/sudarshan-awasthi/"
             target="_blank"
             rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 border border-blue-500 text-blue-700 rounded-lg hover:bg-blue-50 transition"
           >
-            Read our docs
+            <FaLinkedin className="w-5 h-5" />
+            <span className="text-sm font-medium">LinkedIn</span>
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section className="w-full max-w-5xl mt-8 mb-8">
+        <h2 className="text-2xl font-semibold text-center mb-4">Certifications</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 place-items-center">
+          {certifications.map((cert) => (
+            <a
+              key={cert.src}
+              href={cert.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={`View: ${cert.alt}`}
+              className="p-2 bg-gray-100 rounded-lg hover:shadow-lg transition transform hover:scale-105"
+            >
+              <Image
+                src={cert.src}
+                alt={cert.alt}
+                width={100}
+                height={100}
+              />
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* Projects Section */}
+<section className="w-full max-w-5xl mb-16">
+  <h2 className="text-2xl font-semibold text-center mb-6">Projects</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    {projects.map((project) => (
+      <a
+        key={project.title}
+        href={project.href}
+        className="block bg-white border border-gray-200 rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105"
+      >
+        <Image
+          src={project.image}
+          alt={project.title}
+          width={600}
+          height={350}
+          className="w-full h-40 object-cover"
+        />
+        <div className="p-4">
+          <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+          <p className="text-sm text-gray-600">{project.description}</p>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
+
+
+    </main>
+
+    
   );
 }
+
