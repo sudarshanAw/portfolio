@@ -19,6 +19,8 @@ export default function FactbookWaterVsLandSection() {
           src="/projects/cia-factbook/03_water_vs_land_query_output.png"
           alt="SQL query and output: Countries with more water than land"
           className="rounded shadow-md"
+          width={1200}
+          height={700}
         />
       </div>
     </section>

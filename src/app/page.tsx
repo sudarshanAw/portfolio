@@ -64,10 +64,10 @@ export default function HomePage() {
           height={160}
           className="rounded-full mx-auto mb-4"
         />
-        <h1 className="text-4xl font-bold mb-2">👋 Hello, I'm Sudarshan Awasthi</h1>
+        <h1 className="text-4xl font-bold mb-2">{`👋 Hello, I'm Sudarshan Awasthi`}</h1>
         <p className="text-lg text-gray-700 max-w-xl mx-auto">
-          Power Platform Consultant & Data Analyst passionate about solving real‑world problems through modern tech.
-        </p>
+  {`Power Platform Consultant & Data Analyst passionate about solving real-world problems through modern tech.`}
+</p>
 
         {/* Social Buttons */}
         <div className="flex gap-4 justify-center mt-6">

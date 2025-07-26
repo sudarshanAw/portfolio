@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function FactbookPopulationDensitySection() {
   return (
     <section className="max-w-4xl mx-auto px-4 py-10 space-y-6">
@@ -5,7 +7,7 @@ export default function FactbookPopulationDensitySection() {
 
       <p className="text-gray-700 dark:text-gray-300">
         Population density measures how many people live per square kilometer of land. 
-        It is calculated by dividing a country's population by its total area.
+        It is calculated by dividing a country&apos;s population by its total area.
       </p>
 
       <p className="text-gray-700 dark:text-gray-300">
@@ -18,10 +20,12 @@ export default function FactbookPopulationDensitySection() {
       </div>
 
       <div className="pt-6">
-        <img
+        <Image
           src="/projects/cia-factbook/05_population_density_combined.png"
           alt="SQL query and output for population density"
           className="rounded shadow-md"
+          width={1200}
+          height={700}
         />
       </div>
     </section>

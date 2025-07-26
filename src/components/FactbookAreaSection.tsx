@@ -22,11 +22,15 @@ export default function FactbookAreaSection() {
           src="/projects/cia-factbook/02_area_avg_query.png"
           alt="SQL query showing average country area"
           className="rounded shadow-md"
+          width={1200}
+          height={700}
         />
         <img
           src="/projects/cia-factbook/02_area_above_avg_output.png"
           alt="Countries with area above average"
           className="rounded shadow-md"
+          width={1200}
+          height={700}
         />
       </div>
     </section>

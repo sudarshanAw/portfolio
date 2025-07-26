@@ -21,6 +21,8 @@ export default function FactbookBirthVsDeathSection() {
           src="/projects/cia-factbook/04_death_vs_birth_combined.png"
           alt="Query and table: Countries with higher death rate than birth rate"
           className="rounded shadow-md"
+          width={1200}
+          height={700}
         />
       </div>
     </section>

@@ -3,6 +3,7 @@ import FactbookAreaSection from "@/components/FactbookAreaSection";
 import FactbookWaterVsLandSection from "@/components/FactbookWaterVsLandSection";
 import FactbookBirthVsDeathSection from "@/components/FactbookBirthVsDeathSection";
 import FactbookPopulationDensitySection from "@/components/FactbookPopulationDensitySection";
+import Link from 'next/link';
 
 
 export default function CIAFactbookPage() {
@@ -35,12 +36,13 @@ export default function CIAFactbookPage() {
   </a>
 
   <div className="mt-8">
-    <a
-      href="/"
-      className="text-blue-600 hover:text-blue-800 font-medium underline transition"
-    >
-      ← Back to Home
-    </a>
+    <Link
+  href="/"
+  className="text-blue-600 hover:text-blue-800 font-medium underline transition"
+>
+  ← Back to Home
+</Link>
+
   </div>
 </section>
 
