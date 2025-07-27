@@ -60,9 +60,9 @@ export default function HomePage() {
         <Image
           src="/me.jpg"
           alt="Profile picture of Sudarshan"
-          width={160}
-          height={160}
-          className="rounded-full mx-auto mb-4"
+          width={320}
+          height={320}
+          className="rounded-2xl mx-auto"
         />
         <h1 className="text-4xl font-bold mb-2">{`👋 Hello, I'm Sudarshan Awasthi`}</h1>
         <p className="text-lg text-gray-700 max-w-xl mx-auto">
