@@ -82,7 +82,17 @@ export default function PDFChatbotPage() {
             className="rounded shadow mb-6"
           />
           <p className="text-gray-700">
-            The system combines Power Apps → Power Automate → Flask → Sentence Embeddings → AI Reasoning and flows the answer back to Power Apps dynamically.
+            The architecture consists of five interconnected components:
+          </p>
+          <ul className="list-disc list-inside text-gray-700 space-y-1 mt-2">
+            <li><strong>Power Apps:</strong> Frontend chat UI where the user types a question.</li>
+            <li><strong>Power Automate:</strong> Middleware that sends the question to the backend and receives the final AI response.</li>
+            <li><strong>Flask API:</strong> Python server that extracts text from PDFs and uses semantic search to find relevant context.</li>
+            <li><strong>AI Builder:</strong> Uses the reduced context + question to generate a human-readable answer.</li>
+            <li><strong>Power Apps:</strong> Displays the AI-generated answer in a user-friendly interface.</li>
+          </ul>
+          <p className="text-gray-700 mt-4">
+            This flow enables end-to-end semantic search over PDF documents using natural language — without requiring the user to browse, scroll, or filter manually.
           </p>
         </section>
 
