@@ -50,6 +50,12 @@ export default function HomePage() {
     description: "Exploratory data analysis of global facts using SQLite.",
     image: "/images/cia.png",
     href: "/projects/cia-factbook"
+  },
+  {
+  title: "AI-Powered PDF Context Chatbot",
+  description: "A semantic chatbot that extracts answers from PDFs using Flask, Sentence Transformers, and Power Platform.",
+  image: "/images/pdf-context-chatbot.png",
+  href: "/projects/pdf-context-chatbot"
   }
 ];
 
