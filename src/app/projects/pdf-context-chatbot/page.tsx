@@ -11,7 +11,7 @@ export default function PDFChatbotPage() {
         {/* Header */}
         <section>
           <h1 className="text-4xl font-bold mb-2">
-            AI-Powered PDF Context Chatbot Using Flask & Power Platform
+            AI-Powered PDF Context Chatbot Using Flask &amp; Power Platform
           </h1>
           <p className="text-sm text-gray-500">By Sudarshan Awasthi • 2025</p>
           <p className="mt-4 text-lg text-gray-700">
@@ -31,7 +31,7 @@ export default function PDFChatbotPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">📖 Introduction</h2>
           <p className="text-gray-700">
-            In today’s information-heavy environments, finding specific content inside large collections of PDFs is frustrating. This project solves that problem by enabling a chatbot to semantically understand and answer user queries — not just with keyword search, but true contextual understanding.
+            In today&apos;s information-heavy environments, finding specific content inside large collections of PDFs is frustrating. This project solves that problem by enabling a chatbot to semantically understand and answer user queries — not just with keyword search, but true contextual understanding.
           </p>
         </section>
 
@@ -108,10 +108,10 @@ export default function PDFChatbotPage() {
           <div className="space-y-6 mt-6 text-gray-700">
             <h3 className="text-lg font-semibold">📌 What Happens in Power Automate?</h3>
             <ol className="list-decimal list-inside space-y-2">
-              <li><strong>Trigger:</strong> Captures the question from Power Apps via “When a Power Apps button is clicked”.</li>
+              <li><strong>Trigger:</strong> Captures the question from Power Apps via &quot;When a Power Apps button is clicked&quot;.</li>
               <li><strong>Step 1:</strong> Sends HTTP POST to the Flask API hosted on Ngrok.</li>
               <li><strong>Step 2:</strong> Receives reduced context (top matching sentences) from PDFs.</li>
-              <li><strong>Step 3:</strong> Sends both context and question into the AI Builder “Run a prompt” action.</li>
+              <li><strong>Step 3:</strong> Sends both context and question into the AI Builder &quot;Run a prompt&quot; action.</li>
               <li><strong>Step 4:</strong> Returns the AI-generated answer back to Power Apps and updates the UI.</li>
             </ol>
 
@@ -137,13 +137,13 @@ export default function PDFChatbotPage() {
           <h2 className="text-2xl font-semibold mb-4">🧪 Sample Prompt Execution – Power BI Example</h2>
 
           <p className="text-gray-700 mb-4">
-            Here's a real-world example that demonstrates how the chatbot processes a Power Platform question using embedded content from Power BI documentation:
+            Here&apos;s a real-world example that demonstrates how the chatbot processes a Power Platform question using embedded content from Power BI documentation:
           </p>
 
           <div className="space-y-6 text-gray-700">
             <h3 className="text-lg font-semibold">🧾 Question:</h3>
             <div className="bg-gray-100 p-4 rounded shadow">
-              "How do I connect Power BI to SharePoint and refresh the data automatically?"
+              &quot;How do I connect Power BI to SharePoint and refresh the data automatically?&quot;
             </div>
 
             <h3 className="text-lg font-semibold">🔍 Reduced Context:</h3>
@@ -170,7 +170,7 @@ export default function PDFChatbotPage() {
 
             <h3 className="text-lg font-semibold">📄 AI Builder Prompt Format:</h3>
             <pre className="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
-{`Use the following context to answer the user's question.
+{`Use the following context to answer the user&apos;s question.
 Context:
 [Top 5–10 relevant sentences extracted from PDFs]
 
@@ -200,7 +200,7 @@ Question:
         <section className="pt-12">
           <h2 className="text-2xl font-semibold mb-4">✅ Conclusion</h2>
           <p className="text-gray-700">
-            This chatbot showcases the power of combining AI, semantic search, and low-code platforms to solve real-world document analysis challenges. It’s a production-ready, extensible solution for knowledge retrieval.
+            This chatbot showcases the power of combining AI, semantic search, and low-code platforms to solve real-world document analysis challenges. It&apos;s a production-ready, extensible solution for knowledge retrieval.
           </p>
         </section>
 

@@ -33,6 +33,12 @@ export default function HomePage() {
   ];
 
   const projects = [
+    {
+  title: "AI-Powered PDF Context Chatbot",
+  description: "A semantic chatbot that extracts answers from PDFs using Flask, Sentence Transformers, and Power Platform.",
+  image: "/images/pdf-context-chatbot.png",
+  href: "/projects/pdf-context-chatbot"
+  },
   {
     title: "Sales Report",
     description: "A Power BI dashboard to analyze sales trends and regional performance.",
@@ -50,12 +56,6 @@ export default function HomePage() {
     description: "Exploratory data analysis of global facts using SQLite.",
     image: "/images/cia.png",
     href: "/projects/cia-factbook"
-  },
-  {
-  title: "AI-Powered PDF Context Chatbot",
-  description: "A semantic chatbot that extracts answers from PDFs using Flask, Sentence Transformers, and Power Platform.",
-  image: "/images/pdf-context-chatbot.png",
-  href: "/projects/pdf-context-chatbot"
   }
 ];
 
