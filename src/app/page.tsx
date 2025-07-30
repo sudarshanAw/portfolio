@@ -6,8 +6,8 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 export default function HomePage() {
   const certifications = [
     {
-      src: "/certifications/pl400.png",
-      alt: "Microsoft PL‑400 (Power Platform Developer)",
+      src: "/certifications/pl200.png",
+      alt: "Microsoft PL‑200 (Power Platform Functional Consultant Associate)",
       href: "https://learn.microsoft.com/api/credentials/share/en-us/SudarshanAwasthi-9727/F415A9CD9614482C?sharingId=481F97FC893BF4E7"
     },
     {
