@@ -8,22 +8,22 @@ export default function HomePage() {
     {
       src: "/certifications/pl400.png",
       alt: "Microsoft PL‑400 (Power Platform Developer)",
-      href: "https://learn.microsoft.com/en-us/users/sudarshanawasthi-9727/credentials/certification/power-platform-functional-consultant-associate?tab=credentials-tab"
+      href: "https://learn.microsoft.com/api/credentials/share/en-us/SudarshanAwasthi-9727/F415A9CD9614482C?sharingId=481F97FC893BF4E7"
     },
     {
       src: "/certifications/pl300.png",
       alt: "Microsoft PL‑300 (Power BI Data Analyst)",
-      href: "https://learn.microsoft.com/en-us/users/sudarshanawasthi-9727/credentials/certification/data-analyst-associate?tab=credentials-tab"
+      href: "https://learn.microsoft.com/api/credentials/share/en-us/SudarshanAwasthi-9727/951BA41F633465D4?sharingId=481F97FC893BF4E7"
     },
     {
       src: "/certifications/pl900.png",
       alt: "Microsoft PL‑900 (Power Platform Fundamentals)",
-      href: "https://learn.microsoft.com/en-us/users/sudarshanawasthi-9727/credentials/certification/power-platform-fundamentals?tab=credentials-tab"
+      href: "https://learn.microsoft.com/api/credentials/share/en-us/SudarshanAwasthi-9727/8FD615F875CFFAE?sharingId=481F97FC893BF4E7"
     },
     {
       src: "/certifications/az900.png",
       alt: "Microsoft AZ‑900 (Azure Fundamentals)",
-      href: "https://learn.microsoft.com/en-us/users/sudarshanawasthi-9727/credentials/certification/azure-fundamentals?tab=credentials-tab"
+      href: "https://learn.microsoft.com/api/credentials/share/en-us/SudarshanAwasthi-9727/C971E11739F19E6C?sharingId=481F97FC893BF4E7"
     },
     {
       src: "/certifications/psm1.png",
