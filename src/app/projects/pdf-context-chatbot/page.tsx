@@ -2,206 +2,149 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'motion/react';
 import { useLang } from '@/context/LanguageContext';
 
 export default function PDFChatbotPage() {
   const { t } = useLang();
 
   return (
-    <main className="min-h-screen bg-white text-gray-900 p-8">
-      <div className="max-w-5xl mx-auto space-y-12">
+    <main className="min-h-screen pt-24 pb-20">
+      <div className="max-w-4xl mx-auto px-6 space-y-16">
 
         {/* Header */}
-        <section>
-          <h1 className="text-4xl font-bold mb-2">{t('chatbot.h1')}</h1>
-          <p className="text-sm text-gray-500">{t('chatbot.byline')}</p>
-          <p className="mt-4 text-lg text-gray-700">{t('chatbot.intro.lead')}</p>
-        </section>
+        <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {['Flask', 'Power Platform', 'AI', 'Python'].map(tag => (
+              <span key={tag} className="text-xs px-2.5 py-0.5 rounded-full bg-[#1e293b] text-[#94a3b8] border border-[#1e293b]">{tag}</span>
+            ))}
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">{t('chatbot.h1')}</h1>
+          <p className="text-sm text-[#64748b] mb-4">{t('chatbot.byline')}</p>
+          <p className="text-[#94a3b8] text-lg leading-relaxed">{t('chatbot.intro.lead')}</p>
+        </motion.section>
 
-        <Image
-          src="/images/pdf-context-chatbot.png"
-          alt="PDF Context Chatbot Banner"
-          width={1200}
-          height={600}
-          className="rounded-xl"
-        />
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.5 }}>
+          <Image src="/images/pdf-context-chatbot.png" alt="PDF Context Chatbot" width={1200} height={600} className="rounded-xl border border-[#1e293b]" />
+        </motion.div>
 
         {/* Introduction */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.intro.h2')}</h2>
-          <p className="text-gray-700">{t('chatbot.intro.p')}</p>
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold text-white">{t('chatbot.intro.h2')}</h2>
+          <p className="text-[#94a3b8] leading-relaxed">{t('chatbot.intro.p')}</p>
         </section>
 
         {/* Problem Statement */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.problem.h2')}</h2>
-          <p className="text-gray-700 mb-4">{t('chatbot.problem.p')}</p>
-          <ul className="list-disc list-inside text-gray-700 space-y-1">
-            <li>{t('chatbot.problem.li1')}</li>
-            <li>{t('chatbot.problem.li2')}</li>
-            <li>{t('chatbot.problem.li3')}</li>
-            <li>{t('chatbot.problem.li4')}</li>
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold text-white">{t('chatbot.problem.h2')}</h2>
+          <p className="text-[#94a3b8] leading-relaxed">{t('chatbot.problem.p')}</p>
+          <ul className="space-y-2 text-[#94a3b8]">
+            {['chatbot.problem.li1','chatbot.problem.li2','chatbot.problem.li3','chatbot.problem.li4'].map(k => (
+              <li key={k} className="flex items-start gap-2"><span className="text-[#38bdf8] mt-1.5 shrink-0">&#9656;</span>{t(k)}</li>
+            ))}
           </ul>
         </section>
 
         {/* Technologies */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.tech.h2')}</h2>
-          <table className="w-full text-sm border border-gray-300">
-            <thead className="bg-gray-100">
-              <tr>
-                <th className="p-2 border">{t('chatbot.tech.layer')}</th>
-                <th className="p-2 border">{t('chatbot.tech.tech')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td className="p-2 border">UI</td><td className="p-2 border">Power Apps (Canvas App)</td></tr>
-              <tr><td className="p-2 border">Automation</td><td className="p-2 border">Power Automate</td></tr>
-              <tr><td className="p-2 border">Backend</td><td className="p-2 border">Python Flask + Sentence Transformers</td></tr>
-              <tr><td className="p-2 border">Embedding Model</td><td className="p-2 border">all-mpnet-base-v2</td></tr>
-              <tr><td className="p-2 border">PDF Parsing</td><td className="p-2 border">PyPDF2</td></tr>
-              <tr><td className="p-2 border">Hosting</td><td className="p-2 border">Ngrok (Dev)</td></tr>
-              <tr><td className="p-2 border">Memory Logs</td><td className="p-2 border">psutil</td></tr>
-            </tbody>
-          </table>
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold text-white">{t('chatbot.tech.h2')}</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border border-[#1e293b] rounded-lg overflow-hidden">
+              <thead className="bg-[#111827]">
+                <tr>
+                  <th className="p-3 border-b border-[#1e293b] text-left text-[#94a3b8] font-medium">{t('chatbot.tech.layer')}</th>
+                  <th className="p-3 border-b border-[#1e293b] text-left text-[#94a3b8] font-medium">{t('chatbot.tech.tech')}</th>
+                </tr>
+              </thead>
+              <tbody className="text-[#94a3b8]">
+                {[['UI','Power Apps (Canvas App)'],['Automation','Power Automate'],['Backend','Python Flask + Sentence Transformers'],['Embedding Model','all-mpnet-base-v2'],['PDF Parsing','PyPDF2'],['Hosting','Ngrok (Dev)'],['Memory Logs','psutil']].map(([layer, tech]) => (
+                  <tr key={layer} className="border-b border-[#1e293b]/50 hover:bg-[#111827]/50 transition-colors">
+                    <td className="p-3 text-[#e2e8f0]">{layer}</td>
+                    <td className="p-3">{tech}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </section>
 
         {/* Architecture */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.arch.h2')}</h2>
-          <Image
-            src="/projects/pdf-context-chatbot/architecture_diagram.png"
-            alt="Architecture Diagram"
-            width={1200}
-            height={700}
-            className="rounded shadow mb-6"
-          />
-          <p className="text-gray-700">{t('chatbot.arch.p')}</p>
-          <ul className="list-disc list-inside text-gray-700 space-y-1 mt-2">
-            <li><strong>Power Apps:</strong> {t('chatbot.arch.li1')}</li>
-            <li><strong>Power Automate:</strong> {t('chatbot.arch.li2')}</li>
-            <li><strong>Flask API:</strong> {t('chatbot.arch.li3')}</li>
-            <li><strong>AI Builder:</strong> {t('chatbot.arch.li4')}</li>
-            <li><strong>Power Apps:</strong> {t('chatbot.arch.li5')}</li>
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold text-white">{t('chatbot.arch.h2')}</h2>
+          <Image src="/projects/pdf-context-chatbot/architecture_diagram.png" alt="Architecture" width={1200} height={700} className="rounded-xl border border-[#1e293b]" />
+          <p className="text-[#94a3b8] leading-relaxed">{t('chatbot.arch.p')}</p>
+          <ul className="space-y-2 text-[#94a3b8]">
+            {['chatbot.arch.li1','chatbot.arch.li2','chatbot.arch.li3','chatbot.arch.li4','chatbot.arch.li5'].map(k => (
+              <li key={k} className="flex items-start gap-2"><span className="text-[#38bdf8] mt-1.5 shrink-0">&#9656;</span>{t(k)}</li>
+            ))}
           </ul>
-          <p className="text-gray-700 mt-4">{t('chatbot.arch.p2')}</p>
+          <p className="text-[#94a3b8] leading-relaxed">{t('chatbot.arch.p2')}</p>
         </section>
 
-        {/* Power Apps Screenshot */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.powerapps.h2')}</h2>
-          <Image
-            src="/projects/pdf-context-chatbot/powerapps_ui.png"
-            alt="Power Apps UI"
-            width={1200}
-            height={700}
-            className="rounded shadow"
-          />
+        {/* Power Apps UI */}
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold text-white">{t('chatbot.powerapps.h2')}</h2>
+          <Image src="/projects/pdf-context-chatbot/powerapps_ui.png" alt="Power Apps UI" width={1200} height={700} className="rounded-xl border border-[#1e293b]" />
         </section>
 
         {/* Power Automate */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.automate.h2')}</h2>
-          <p className="text-gray-700">{t('chatbot.automate.p')}</p>
-
-          <div className="space-y-6 mt-6 text-gray-700">
-            <h3 className="text-lg font-semibold">{t('chatbot.automate.h3')}</h3>
-            <ol className="list-decimal list-inside space-y-2">
-              <li><strong>Trigger:</strong> {t('chatbot.automate.step1')}</li>
-              <li><strong>Step 1:</strong> {t('chatbot.automate.step2')}</li>
-              <li><strong>Step 2:</strong> {t('chatbot.automate.step3')}</li>
-              <li><strong>Step 3:</strong> {t('chatbot.automate.step4')}</li>
-              <li><strong>Step 4:</strong> {t('chatbot.automate.step5')}</li>
-            </ol>
-
-            <div className="bg-blue-50 text-blue-800 px-4 py-3 rounded-md border-l-4 border-blue-500 shadow mt-6">
-              📌 Summary of Flow:<br />
-              <code>
-                [User Question] → [Power Automate Triggered] → [HTTP → Flask API] → [Reduced Context] → [AI Prompt] → [Answer Returned]
-              </code>
-            </div>
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold text-white">{t('chatbot.automate.h2')}</h2>
+          <p className="text-[#94a3b8] leading-relaxed">{t('chatbot.automate.p')}</p>
+          <h3 className="text-lg font-medium text-white pt-2">{t('chatbot.automate.h3')}</h3>
+          <ol className="space-y-2 text-[#94a3b8] list-decimal list-inside">
+            {['chatbot.automate.step1','chatbot.automate.step2','chatbot.automate.step3','chatbot.automate.step4','chatbot.automate.step5'].map(k => (
+              <li key={k}>{t(k)}</li>
+            ))}
+          </ol>
+          <div className="bg-[#111827] border-l-4 border-[#38bdf8] px-4 py-3 rounded-r-lg text-sm text-[#94a3b8]">
+            <code>[User Question] → [Power Automate] → [Flask API] → [Reduced Context] → [AI Prompt] → [Answer]</code>
           </div>
-
-          <Image
-            src="/projects/pdf-context-chatbot/powerautomate_flow.png"
-            alt="Power Automate Flow"
-            width={1200}
-            height={700}
-            className="rounded shadow mt-6"
-          />
+          <Image src="/projects/pdf-context-chatbot/powerautomate_flow.png" alt="Power Automate Flow" width={1200} height={700} className="rounded-xl border border-[#1e293b]" />
         </section>
 
         {/* Sample Prompt */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.sample.h2')}</h2>
-          <p className="text-gray-700 mb-4">{t('chatbot.sample.p')}</p>
-
-          <div className="space-y-6 text-gray-700">
-            <h3 className="text-lg font-semibold">{t('chatbot.sample.qh')}</h3>
-            <div className="bg-gray-100 p-4 rounded shadow">
-              {t('chatbot.sample.q')}
-            </div>
-
-            <h3 className="text-lg font-semibold">{t('chatbot.sample.rch')}</h3>
-            <ul className="list-disc list-inside space-y-1">
-              <li>Power BI can connect directly to SharePoint Online lists using the SharePoint Online List connector.</li>
-              <li>When prompted, users must enter the site URL and then select the list to connect.</li>
-              <li>SharePoint data is imported as a structured table that can be shaped using Power Query.</li>
-              <li>For scheduled refresh, the dataset must be published to Power BI Service.</li>
-              <li>A gateway is not required if the data source is cloud-based, such as SharePoint Online.</li>
-              <li>In the Power BI Service, users can configure refresh frequency under the dataset settings.</li>
-              <li>You can set up daily or hourly refresh schedules depending on your license tier (Pro or Premium).</li>
-              <li>Authentication is typically handled via OAuth2 and requires access permission to the SharePoint site.</li>
-              <li>Errors during refresh can be traced in the refresh history panel of the dataset.</li>
-              <li>It is important to avoid columns with complex field types like lookup or person fields as they may not load cleanly.</li>
-            </ul>
-
-            <h3 className="text-lg font-semibold">{t('chatbot.sample.aih')}</h3>
-            <div className="bg-green-50 border-l-4 border-green-500 text-green-900 p-4 rounded shadow">
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold text-white">{t('chatbot.sample.h2')}</h2>
+          <p className="text-[#94a3b8]">{t('chatbot.sample.p')}</p>
+          <div className="glow-card p-4">
+            <h3 className="text-sm font-medium text-[#38bdf8] mb-2">{t('chatbot.sample.qh')}</h3>
+            <p className="text-[#e2e8f0] text-sm">{t('chatbot.sample.q')}</p>
+          </div>
+          <div className="glow-card p-4">
+            <h3 className="text-sm font-medium text-[#22c55e] mb-2">{t('chatbot.sample.aih')}</h3>
+            <p className="text-[#e2e8f0] text-sm leading-relaxed">
               To connect Power BI to SharePoint, use the SharePoint Online List connector and provide the site URL and list name.
               After shaping the data with Power Query, publish the report to Power BI Service. Then, configure automatic refresh
-              under dataset settings — no gateway is needed for SharePoint Online. Make sure your authentication is set up
-              correctly and avoid using unsupported SharePoint columns.
-            </div>
-
-            <h3 className="text-lg font-semibold">{t('chatbot.sample.prompth')}</h3>
-            <pre className="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
-{`Use the following context to answer the user's question.
-Context:
-[Top 5–10 relevant sentences extracted from PDFs]
-
-Question:
-[User input]`}
-            </pre>
+              under dataset settings — no gateway is needed for SharePoint Online.
+            </p>
           </div>
         </section>
 
         {/* GitHub Link */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.repo.h2')}</h2>
-          <p className="text-gray-700 mb-4">{t('chatbot.repo.p')}</p>
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold text-white">{t('chatbot.repo.h2')}</h2>
+          <p className="text-[#94a3b8]">{t('chatbot.repo.p')}</p>
           <a
             href="https://github.com/sudarshanAw/knowledge-book-API"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-[#38bdf8] to-[#818cf8] text-white font-semibold text-sm hover:shadow-lg hover:shadow-[#38bdf8]/20 transition-all hover:-translate-y-0.5"
           >
             {t('chatbot.repo.btn')}
           </a>
         </section>
 
         {/* Conclusion */}
-        <section className="pt-12">
-          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.conclusion.h2')}</h2>
-          <p className="text-gray-700">{t('chatbot.conclusion.p')}</p>
+        <section className="space-y-4 pt-8 border-t border-[#1e293b]">
+          <h2 className="text-xl font-semibold text-white">{t('chatbot.conclusion.h2')}</h2>
+          <p className="text-[#94a3b8] leading-relaxed">{t('chatbot.conclusion.p')}</p>
         </section>
 
-        {/* Back to Home */}
-        <section className="pt-12">
-          <Link href="/" className="text-blue-600 hover:underline text-sm">
-            {t('nav.backHome')}
-          </Link>
-        </section>
+        {/* Back */}
+        <Link href="/" className="inline-flex items-center gap-1 text-sm text-[#64748b] hover:text-[#38bdf8] transition-colors">
+          {t('nav.backHome')}
+        </Link>
       </div>
     </main>
   );

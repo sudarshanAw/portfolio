@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
+import NavBar from "@/components/NavBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Sudarshan Awasthi | Portfolio",
-  description: "Power Platform Consultant & Data Analyst – portfolio of projects, certifications, and skills.",
+  description:
+    "Power Platform Consultant & Full-Stack Developer – portfolio of projects, certifications, and skills.",
 };
 
 export default function RootLayout({
@@ -28,7 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <LanguageProvider>
-          <LanguageSwitcher />
+          <NavBar />
           {children}
         </LanguageProvider>
       </body>

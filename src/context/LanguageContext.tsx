@@ -13,15 +13,42 @@ interface LanguageContextType {
 const translations: Record<string, Record<Lang, string>> = {
   // ─── Global / Nav ────────────────────────────────────────────────────────
   'nav.backHome': { en: '← Back to Home', de: '← Zurück zur Startseite' },
+  'nav.about': { en: 'About', de: 'Über mich' },
+  'nav.skills': { en: 'Skills', de: 'Fähigkeiten' },
+  'nav.certifications': { en: 'Certifications', de: 'Zertifizierungen' },
+  'nav.projects': { en: 'Projects', de: 'Projekte' },
 
   // ─── Home page ───────────────────────────────────────────────────────────
-  'home.greeting': { en: "👋 Hello, I'm Sudarshan Awasthi", de: "👋 Hallo, ich bin Sudarshan Awasthi" },
-  'home.subtitle': {
-    en: 'Power Platform Consultant & Data Analyst passionate about solving real-world problems through modern tech.',
-    de: 'Power-Platform-Berater & Datenanalyst mit Leidenschaft für die Lösung realer Probleme durch moderne Technologien.',
+  'home.greeting': { en: "Hello, I'm", de: 'Hallo, ich bin' },
+  'home.name': { en: 'Sudarshan Awasthi', de: 'Sudarshan Awasthi' },
+  'home.role': {
+    en: 'Power Platform Consultant & Full-Stack Developer',
+    de: 'Power-Platform-Berater & Full-Stack-Entwickler',
   },
+  'home.subtitle': {
+    en: 'I build intelligent business solutions with Microsoft Power Platform, craft data-driven dashboards, and develop modern web applications.',
+    de: 'Ich entwickle intelligente Geschäftslösungen mit Microsoft Power Platform, erstelle datengetriebene Dashboards und entwickle moderne Webanwendungen.',
+  },
+  'home.cta.projects': { en: 'View Projects', de: 'Projekte ansehen' },
+  'home.cta.contact': { en: 'Get in Touch', de: 'Kontakt aufnehmen' },
+  'home.about': { en: 'About Me', de: 'Über mich' },
+  'home.aboutText': {
+    en: 'A software developer based in Germany with deep expertise in the Microsoft ecosystem. I specialize in Power Apps, Power Automate, Power BI, and SharePoint, while also building full-stack web applications with React and Next.js. I love turning complex business requirements into elegant, automated solutions.',
+    de: 'Ein Softwareentwickler mit Sitz in Deutschland und fundierter Expertise im Microsoft-Ökosystem. Ich bin spezialisiert auf Power Apps, Power Automate, Power BI und SharePoint und entwickle gleichzeitig Full-Stack-Webanwendungen mit React und Next.js. Ich verwandle komplexe Geschäftsanforderungen gerne in elegante, automatisierte Lösungen.',
+  },
+  'home.skills': { en: 'Tech Stack', de: 'Tech-Stack' },
   'home.certifications': { en: 'Certifications', de: 'Zertifizierungen' },
-  'home.projects': { en: 'Projects', de: 'Projekte' },
+  'home.projects': { en: 'Featured Projects', de: 'Ausgewählte Projekte' },
+  'home.contact': { en: 'Get in Touch', de: 'Kontakt aufnehmen' },
+  'home.contactText': {
+    en: "Interested in working together? Let's connect.",
+    de: 'Interesse an einer Zusammenarbeit? Lassen Sie uns vernetzen.',
+  },
+  'home.contactBtn': { en: 'Send Email', de: 'E-Mail senden' },
+  'home.footer': {
+    en: 'Designed & Built by Sudarshan Awasthi',
+    de: 'Entworfen & Entwickelt von Sudarshan Awasthi',
+  },
 
   // ─── Project cards ───────────────────────────────────────────────────────
   'project.chatbot.title': { en: 'AI-Powered PDF Context Chatbot', de: 'KI-gestützter PDF-Kontext-Chatbot' },
