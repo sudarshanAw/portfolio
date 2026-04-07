@@ -62,10 +62,11 @@ export default function HomePage() {
               <Image
                 src="/me.jpg"
                 alt="Sudarshan Awasthi"
-                width={128}
-                height={128}
+                width={320}
+                height={320}
                 className="relative rounded-full object-cover w-32 h-32 border-2 border-[#0b0f1a]"
                 priority
+                quality={90}
               />
             </div>
           </motion.div>
