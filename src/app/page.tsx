@@ -195,7 +195,7 @@ export default function HomePage() {
                 <div className="h-px bg-[#1e293b]" />
                 <div className="flex justify-between">
                   <span className="text-[#64748b]">Languages</span>
-                  <span className="text-[#e2e8f0]">EN, DE, HI, JP</span>
+                  <span className="text-[#e2e8f0]">EN, DE, HI</span>
                 </div>
               </div>
             </div>
