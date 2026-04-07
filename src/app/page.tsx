@@ -2,8 +2,11 @@
 
 import Image from 'next/image';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { useLang } from '@/context/LanguageContext';
 
 export default function HomePage() {
+  const { t } = useLang();
+
   const certifications = [
     {
       src: "/certifications/pl200.png",
@@ -34,30 +37,30 @@ export default function HomePage() {
 
   const projects = [
     {
-  title: "AI-Powered PDF Context Chatbot",
-  description: "A semantic chatbot that extracts answers from PDFs using Flask, Sentence Transformers, and Power Platform.",
-  image: "/images/pdf-context-chatbot.png",
-  href: "/projects/pdf-context-chatbot"
-  },
-  {
-    title: "Sales Report",
-    description: "A Power BI dashboard to analyze sales trends and regional performance.",
-    image: "/images/sales-report.png",
-    href: "/projects/sales-report"    
-  },
-  {
-    title: "FIFA World Cup Analysis",
-    description: "Interactive Streamlit app to explore FIFA World Cup stats.",
-    image: "/images/fifa.png",
-    href: "/projects/fifa"
-  },
-  {
-    title: "CIA Factbook Analysis",
-    description: "Exploratory data analysis of global facts using SQLite.",
-    image: "/images/cia.png",
-    href: "/projects/cia-factbook"
-  }
-];
+      title: t('project.chatbot.title'),
+      description: t('project.chatbot.desc'),
+      image: "/images/pdf-context-chatbot.png",
+      href: "/projects/pdf-context-chatbot"
+    },
+    {
+      title: t('project.sales.title'),
+      description: t('project.sales.desc'),
+      image: "/images/sales-report.png",
+      href: "/projects/sales-report"
+    },
+    {
+      title: t('project.fifa.title'),
+      description: t('project.fifa.desc'),
+      image: "/images/fifa.png",
+      href: "/projects/fifa"
+    },
+    {
+      title: t('project.cia.title'),
+      description: t('project.cia.desc'),
+      image: "/images/cia.png",
+      href: "/projects/cia-factbook"
+    }
+  ];
 
   return (
     <main className="min-h-screen bg-white text-gray-900 p-8 flex flex-col items-center">
@@ -70,10 +73,10 @@ export default function HomePage() {
           height={320}
           className="rounded-2xl mx-auto"
         />
-        <h1 className="text-4xl font-bold mb-2">{`👋 Hello, I'm Sudarshan Awasthi`}</h1>
+        <h1 className="text-4xl font-bold mb-2">{t('home.greeting')}</h1>
         <p className="text-lg text-gray-700 max-w-xl mx-auto">
-  {`Power Platform Consultant & Data Analyst passionate about solving real-world problems through modern tech.`}
-</p>
+          {t('home.subtitle')}
+        </p>
 
         {/* Social Buttons */}
         <div className="flex gap-4 justify-center mt-6">
@@ -100,7 +103,7 @@ export default function HomePage() {
 
       {/* Certifications Section */}
       <section className="w-full max-w-5xl mt-8 mb-8">
-        <h2 className="text-2xl font-semibold text-center mb-4">Certifications</h2>
+        <h2 className="text-2xl font-semibold text-center mb-4">{t('home.certifications')}</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 place-items-center">
           {certifications.map((cert) => (
             <a
@@ -123,35 +126,30 @@ export default function HomePage() {
       </section>
 
       {/* Projects Section */}
-<section className="w-full max-w-5xl mb-16">
-  <h2 className="text-2xl font-semibold text-center mb-6">Projects</h2>
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    {projects.map((project) => (
-      <a
-        key={project.title}
-        href={project.href}
-        className="block bg-white border border-gray-200 rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105"
-      >
-        <Image
-          src={project.image}
-          alt={project.title}
-          width={600}
-          height={350}
-          className="w-full h-40 object-cover"
-        />
-        <div className="p-4">
-          <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-          <p className="text-sm text-gray-600">{project.description}</p>
+      <section className="w-full max-w-5xl mb-16">
+        <h2 className="text-2xl font-semibold text-center mb-6">{t('home.projects')}</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {projects.map((project) => (
+            <a
+              key={project.href}
+              href={project.href}
+              className="block bg-white border border-gray-200 rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105"
+            >
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={600}
+                height={350}
+                className="w-full h-40 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+                <p className="text-sm text-gray-600">{project.description}</p>
+              </div>
+            </a>
+          ))}
         </div>
-      </a>
-    ))}
-  </div>
-</section>
-
-
+      </section>
     </main>
-
-    
   );
 }
-

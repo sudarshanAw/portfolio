@@ -2,21 +2,20 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLang } from '@/context/LanguageContext';
 
 export default function PDFChatbotPage() {
+  const { t } = useLang();
+
   return (
     <main className="min-h-screen bg-white text-gray-900 p-8">
       <div className="max-w-5xl mx-auto space-y-12">
 
         {/* Header */}
         <section>
-          <h1 className="text-4xl font-bold mb-2">
-            AI-Powered PDF Context Chatbot Using Flask &amp; Power Platform
-          </h1>
-          <p className="text-sm text-gray-500">By Sudarshan Awasthi • 2025</p>
-          <p className="mt-4 text-lg text-gray-700">
-            An intelligent chatbot that semantically reads PDFs and answers natural language questions using embeddings, Flask API, and Power Apps UI.
-          </p>
+          <h1 className="text-4xl font-bold mb-2">{t('chatbot.h1')}</h1>
+          <p className="text-sm text-gray-500">{t('chatbot.byline')}</p>
+          <p className="mt-4 text-lg text-gray-700">{t('chatbot.intro.lead')}</p>
         </section>
 
         <Image
@@ -29,34 +28,30 @@ export default function PDFChatbotPage() {
 
         {/* Introduction */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">📖 Introduction</h2>
-          <p className="text-gray-700">
-            In today&apos;s information-heavy environments, finding specific content inside large collections of PDFs is frustrating. This project solves that problem by enabling a chatbot to semantically understand and answer user queries — not just with keyword search, but true contextual understanding.
-          </p>
+          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.intro.h2')}</h2>
+          <p className="text-gray-700">{t('chatbot.intro.p')}</p>
         </section>
 
         {/* Problem Statement */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">🎯 Problem Statement</h2>
-          <p className="text-gray-700 mb-4">
-            Traditional search fails when the exact wording is unknown or information is scattered across documents. This solution enables:
-          </p>
+          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.problem.h2')}</h2>
+          <p className="text-gray-700 mb-4">{t('chatbot.problem.p')}</p>
           <ul className="list-disc list-inside text-gray-700 space-y-1">
-            <li>Natural language question input</li>
-            <li>Contextual understanding of PDF content using semantic embeddings</li>
-            <li>AI-generated answers</li>
-            <li>Seamless low-code UI with Power Platform</li>
+            <li>{t('chatbot.problem.li1')}</li>
+            <li>{t('chatbot.problem.li2')}</li>
+            <li>{t('chatbot.problem.li3')}</li>
+            <li>{t('chatbot.problem.li4')}</li>
           </ul>
         </section>
 
         {/* Technologies */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">🛠️ Technologies Used</h2>
+          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.tech.h2')}</h2>
           <table className="w-full text-sm border border-gray-300">
             <thead className="bg-gray-100">
               <tr>
-                <th className="p-2 border">Layer</th>
-                <th className="p-2 border">Technology</th>
+                <th className="p-2 border">{t('chatbot.tech.layer')}</th>
+                <th className="p-2 border">{t('chatbot.tech.tech')}</th>
               </tr>
             </thead>
             <tbody>
@@ -71,9 +66,9 @@ export default function PDFChatbotPage() {
           </table>
         </section>
 
-        {/* Architecture Diagram */}
+        {/* Architecture */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">🧭 Architecture Overview</h2>
+          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.arch.h2')}</h2>
           <Image
             src="/projects/pdf-context-chatbot/architecture_diagram.png"
             alt="Architecture Diagram"
@@ -81,24 +76,20 @@ export default function PDFChatbotPage() {
             height={700}
             className="rounded shadow mb-6"
           />
-          <p className="text-gray-700">
-            The architecture consists of five interconnected components:
-          </p>
+          <p className="text-gray-700">{t('chatbot.arch.p')}</p>
           <ul className="list-disc list-inside text-gray-700 space-y-1 mt-2">
-            <li><strong>Power Apps:</strong> Frontend chat UI where the user types a question.</li>
-            <li><strong>Power Automate:</strong> Middleware that sends the question to the backend and receives the final AI response.</li>
-            <li><strong>Flask API:</strong> Python server that extracts text from PDFs and uses semantic search to find relevant context.</li>
-            <li><strong>AI Builder:</strong> Uses the reduced context + question to generate a human-readable answer.</li>
-            <li><strong>Power Apps:</strong> Displays the AI-generated answer in a user-friendly interface.</li>
+            <li><strong>Power Apps:</strong> {t('chatbot.arch.li1')}</li>
+            <li><strong>Power Automate:</strong> {t('chatbot.arch.li2')}</li>
+            <li><strong>Flask API:</strong> {t('chatbot.arch.li3')}</li>
+            <li><strong>AI Builder:</strong> {t('chatbot.arch.li4')}</li>
+            <li><strong>Power Apps:</strong> {t('chatbot.arch.li5')}</li>
           </ul>
-          <p className="text-gray-700 mt-4">
-            This flow enables end-to-end semantic search over PDF documents using natural language — without requiring the user to browse, scroll, or filter manually.
-          </p>
+          <p className="text-gray-700 mt-4">{t('chatbot.arch.p2')}</p>
         </section>
 
         {/* Power Apps Screenshot */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">💬 Power Apps Chat UI</h2>
+          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.powerapps.h2')}</h2>
           <Image
             src="/projects/pdf-context-chatbot/powerapps_ui.png"
             alt="Power Apps UI"
@@ -108,21 +99,19 @@ export default function PDFChatbotPage() {
           />
         </section>
 
-        {/* Power Automate Explanation */}
+        {/* Power Automate */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">🔄 Power Automate – Orchestrating the Flow</h2>
-          <p className="text-gray-700">
-            Power Automate plays a crucial role in connecting the user interface built in Power Apps with the backend AI system powered by Flask and Python. It acts as the middleware that sends and receives data, triggers the AI logic, and ensures that user queries are processed intelligently and efficiently.
-          </p>
+          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.automate.h2')}</h2>
+          <p className="text-gray-700">{t('chatbot.automate.p')}</p>
 
           <div className="space-y-6 mt-6 text-gray-700">
-            <h3 className="text-lg font-semibold">📌 What Happens in Power Automate?</h3>
+            <h3 className="text-lg font-semibold">{t('chatbot.automate.h3')}</h3>
             <ol className="list-decimal list-inside space-y-2">
-              <li><strong>Trigger:</strong> Captures the question from Power Apps via &quot;When a Power Apps button is clicked&quot;.</li>
-              <li><strong>Step 1:</strong> Sends HTTP POST to the Flask API hosted on Ngrok.</li>
-              <li><strong>Step 2:</strong> Receives reduced context (top matching sentences) from PDFs.</li>
-              <li><strong>Step 3:</strong> Sends both context and question into the AI Builder &quot;Run a prompt&quot; action.</li>
-              <li><strong>Step 4:</strong> Returns the AI-generated answer back to Power Apps and updates the UI.</li>
+              <li><strong>Trigger:</strong> {t('chatbot.automate.step1')}</li>
+              <li><strong>Step 1:</strong> {t('chatbot.automate.step2')}</li>
+              <li><strong>Step 2:</strong> {t('chatbot.automate.step3')}</li>
+              <li><strong>Step 3:</strong> {t('chatbot.automate.step4')}</li>
+              <li><strong>Step 4:</strong> {t('chatbot.automate.step5')}</li>
             </ol>
 
             <div className="bg-blue-50 text-blue-800 px-4 py-3 rounded-md border-l-4 border-blue-500 shadow mt-6">
@@ -142,21 +131,18 @@ export default function PDFChatbotPage() {
           />
         </section>
 
-        {/* AI Prompt Sample */}
+        {/* Sample Prompt */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">🧪 Sample Prompt Execution – Power BI Example</h2>
-
-          <p className="text-gray-700 mb-4">
-            Here&apos;s a real-world example that demonstrates how the chatbot processes a Power Platform question using embedded content from Power BI documentation:
-          </p>
+          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.sample.h2')}</h2>
+          <p className="text-gray-700 mb-4">{t('chatbot.sample.p')}</p>
 
           <div className="space-y-6 text-gray-700">
-            <h3 className="text-lg font-semibold">🧾 Question:</h3>
+            <h3 className="text-lg font-semibold">{t('chatbot.sample.qh')}</h3>
             <div className="bg-gray-100 p-4 rounded shadow">
-              &quot;How do I connect Power BI to SharePoint and refresh the data automatically?&quot;
+              {t('chatbot.sample.q')}
             </div>
 
-            <h3 className="text-lg font-semibold">🔍 Reduced Context:</h3>
+            <h3 className="text-lg font-semibold">{t('chatbot.sample.rch')}</h3>
             <ul className="list-disc list-inside space-y-1">
               <li>Power BI can connect directly to SharePoint Online lists using the SharePoint Online List connector.</li>
               <li>When prompted, users must enter the site URL and then select the list to connect.</li>
@@ -170,7 +156,7 @@ export default function PDFChatbotPage() {
               <li>It is important to avoid columns with complex field types like lookup or person fields as they may not load cleanly.</li>
             </ul>
 
-            <h3 className="text-lg font-semibold">🧠 Final AI Answer:</h3>
+            <h3 className="text-lg font-semibold">{t('chatbot.sample.aih')}</h3>
             <div className="bg-green-50 border-l-4 border-green-500 text-green-900 p-4 rounded shadow">
               To connect Power BI to SharePoint, use the SharePoint Online List connector and provide the site URL and list name.
               After shaping the data with Power Query, publish the report to Power BI Service. Then, configure automatic refresh
@@ -178,9 +164,9 @@ export default function PDFChatbotPage() {
               correctly and avoid using unsupported SharePoint columns.
             </div>
 
-            <h3 className="text-lg font-semibold">📄 AI Builder Prompt Format:</h3>
+            <h3 className="text-lg font-semibold">{t('chatbot.sample.prompth')}</h3>
             <pre className="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
-{`Use the following context to answer the user&apos;s question.
+{`Use the following context to answer the user's question.
 Context:
 [Top 5–10 relevant sentences extracted from PDFs]
 
@@ -192,32 +178,28 @@ Question:
 
         {/* GitHub Link */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">🔗 Code Repository</h2>
-          <p className="text-gray-700 mb-4">
-            Explore the backend Flask code and setup instructions here:
-          </p>
+          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.repo.h2')}</h2>
+          <p className="text-gray-700 mb-4">{t('chatbot.repo.p')}</p>
           <a
             href="https://github.com/sudarshanAw/knowledge-book-API"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition"
           >
-            View on GitHub
+            {t('chatbot.repo.btn')}
           </a>
         </section>
 
         {/* Conclusion */}
         <section className="pt-12">
-          <h2 className="text-2xl font-semibold mb-4">✅ Conclusion</h2>
-          <p className="text-gray-700">
-            This chatbot showcases the power of combining AI, semantic search, and low-code platforms to solve real-world document analysis challenges. It&apos;s a production-ready, extensible solution for knowledge retrieval.
-          </p>
+          <h2 className="text-2xl font-semibold mb-4">{t('chatbot.conclusion.h2')}</h2>
+          <p className="text-gray-700">{t('chatbot.conclusion.p')}</p>
         </section>
 
         {/* Back to Home */}
         <section className="pt-12">
           <Link href="/" className="text-blue-600 hover:underline text-sm">
-            ← Back to Home
+            {t('nav.backHome')}
           </Link>
         </section>
       </div>
