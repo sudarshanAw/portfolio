@@ -166,7 +166,7 @@ export default function HomePage() {
             <a href="#contact" className="px-7 py-3 rounded-lg border border-[#162033] text-[#94a3b8] font-semibold text-sm hover:border-[#38bdf8]/30 hover:text-white transition-all hover:-translate-y-0.5">
               {t('home.cta.contact')}
             </a>
-            <a href="https://raw.githubusercontent.com/sudarshanAw/cv/main/Sudarshan_Awasthi_CV_EN.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-7 py-3 rounded-lg border border-[#162033] text-[#94a3b8] font-semibold text-sm hover:border-[#38bdf8]/30 hover:text-white transition-all hover:-translate-y-0.5">
+            <a href="https://raw.githubusercontent.com/sudarshanAw/cv/main/SudarshanAwasthi_EN.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-7 py-3 rounded-lg border border-[#162033] text-[#94a3b8] font-semibold text-sm hover:border-[#38bdf8]/30 hover:text-white transition-all hover:-translate-y-0.5">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
               CV
             </a>
@@ -389,7 +389,7 @@ export default function HomePage() {
               </div>
               <div className="flex flex-wrap gap-3 shrink-0">
                 <a
-                  href="https://raw.githubusercontent.com/sudarshanAw/cv/main/Sudarshan_Awasthi_CV_EN.pdf"
+                  href="https://raw.githubusercontent.com/sudarshanAw/cv/main/SudarshanAwasthi_EN.pdf"
                   target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#38bdf8] to-[#818cf8] text-white font-semibold text-sm hover:shadow-lg hover:shadow-[#38bdf8]/20 transition-all hover:-translate-y-0.5"
                 >
@@ -397,7 +397,7 @@ export default function HomePage() {
                   {t('home.cta.cv.en')}
                 </a>
                 <a
-                  href="https://raw.githubusercontent.com/sudarshanAw/cv/main/Sudarshan_Awasthi_Lebenslauf_DE.pdf"
+                  href="https://raw.githubusercontent.com/sudarshanAw/cv/main/SudarshanAwasthi_DE.pdf"
                   target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#162033] text-[#94a3b8] font-semibold text-sm hover:border-[#38bdf8]/30 hover:text-white transition-all hover:-translate-y-0.5"
                 >
