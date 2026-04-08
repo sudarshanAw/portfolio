@@ -32,13 +32,37 @@ const translations: Record<string, Record<Lang, string>> = {
   'home.cta.projects': { en: 'View Projects', de: 'Projekte ansehen' },
   'home.cta.contact': { en: 'Get in Touch', de: 'Kontakt aufnehmen' },
   'home.about': { en: 'About Me', de: 'Über mich' },
+  'home.aboutLead': {
+    en: 'Get to know me',
+    de: 'Lerne mich kennen',
+  },
   'home.aboutText': {
     en: 'A software developer based in Germany with deep expertise in the Microsoft ecosystem. I specialize in Power Apps, Power Automate, Power BI, and SharePoint, while also building full-stack web applications with React and Next.js. I love turning complex business requirements into elegant, automated solutions.',
     de: 'Ein Softwareentwickler mit Sitz in Deutschland und fundierter Expertise im Microsoft-Ökosystem. Ich bin spezialisiert auf Power Apps, Power Automate, Power BI und SharePoint und entwickle gleichzeitig Full-Stack-Webanwendungen mit React und Next.js. Ich verwandle komplexe Geschäftsanforderungen gerne in elegante, automatisierte Lösungen.',
   },
   'home.skills': { en: 'Tech Stack', de: 'Tech-Stack' },
+  'home.skillsLead': {
+    en: 'Technologies I work with',
+    de: 'Technologien, mit denen ich arbeite',
+  },
+  'home.cat.microsoft': { en: 'Microsoft Ecosystem', de: 'Microsoft-Ökosystem' },
+  'home.cat.frontend': { en: 'Frontend', de: 'Frontend' },
+  'home.cat.backend': { en: 'Backend & Data', de: 'Backend & Daten' },
+  'home.cat.tools': { en: 'Tools & Others', de: 'Tools & Sonstiges' },
+  'home.certificationsLead': {
+    en: 'Industry recognized credentials',
+    de: 'Branchenanerkannte Nachweise',
+  },
   'home.certifications': { en: 'Certifications', de: 'Zertifizierungen' },
   'home.projects': { en: 'Featured Projects', de: 'Ausgewählte Projekte' },
+  'home.projectsLead': {
+    en: 'Things I have built',
+    de: 'Was ich gebaut habe',
+  },
+  'home.viewProject': { en: 'View Case Study →', de: 'Fallstudie ansehen →' },
+  'home.stat.certs': { en: 'Certifications', de: 'Zertifizierungen' },
+  'home.stat.tech': { en: 'Technologies', de: 'Technologien' },
+  'home.stat.projects': { en: 'Projects', de: 'Projekte' },
   'home.contact': { en: 'Get in Touch', de: 'Kontakt aufnehmen' },
   'home.contactText': {
     en: "Interested in working together? Let's connect.",
