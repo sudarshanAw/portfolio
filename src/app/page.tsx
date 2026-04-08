@@ -166,6 +166,10 @@ export default function HomePage() {
             <a href="#contact" className="px-7 py-3 rounded-lg border border-[#162033] text-[#94a3b8] font-semibold text-sm hover:border-[#38bdf8]/30 hover:text-white transition-all hover:-translate-y-0.5">
               {t('home.cta.contact')}
             </a>
+            <a href="/Sudarshan_Awasthi_CV_EN.pdf" download className="flex items-center gap-2 px-7 py-3 rounded-lg border border-[#162033] text-[#94a3b8] font-semibold text-sm hover:border-[#38bdf8]/30 hover:text-white transition-all hover:-translate-y-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+              CV
+            </a>
           </motion.div>
 
           {/* Social icons */}
@@ -358,6 +362,51 @@ export default function HomePage() {
               </motion.a>
             ))}
           </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════════════════
+            CV DOWNLOADS
+        ═══════════════════════════════════════════════════════ */}
+        <section id="cv">
+          <SectionHeading>{t('home.cv.title')}</SectionHeading>
+          <motion.div
+            className="glow-card p-6 sm:p-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="flex flex-col sm:flex-row items-center gap-6">
+              {/* Document icon */}
+              <div className="shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-[#38bdf8]/20 to-[#818cf8]/20 border border-[#162033] flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-[#38bdf8]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <div className="flex-1 text-center sm:text-left">
+                <p className="code-comment mb-1">{'// ' + t('home.cv.subtitle')}</p>
+                <p className="text-white font-semibold">Sudarshan Awasthi — CV / Lebenslauf</p>
+              </div>
+              <div className="flex flex-wrap gap-3 shrink-0">
+                <a
+                  href="/Sudarshan_Awasthi_CV_EN.pdf"
+                  download
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#38bdf8] to-[#818cf8] text-white font-semibold text-sm hover:shadow-lg hover:shadow-[#38bdf8]/20 transition-all hover:-translate-y-0.5"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                  {t('home.cta.cv.en')}
+                </a>
+                <a
+                  href="/Sudarshan_Awasthi_Lebenslauf_DE.pdf"
+                  download
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#162033] text-[#94a3b8] font-semibold text-sm hover:border-[#38bdf8]/30 hover:text-white transition-all hover:-translate-y-0.5"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                  {t('home.cta.cv.de')}
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </section>
 
         {/* ═══════════════════════════════════════════════════════

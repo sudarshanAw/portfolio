@@ -31,6 +31,10 @@ const translations: Record<string, Record<Lang, string>> = {
   },
   'home.cta.projects': { en: 'View Projects', de: 'Projekte ansehen' },
   'home.cta.contact': { en: 'Get in Touch', de: 'Kontakt aufnehmen' },
+  'home.cta.cv.en': { en: 'Download CV (EN)', de: 'Lebenslauf herunterladen (EN)' },
+  'home.cta.cv.de': { en: 'Download CV (DE)', de: 'Lebenslauf herunterladen (DE)' },
+  'home.cv.title': { en: 'My CV', de: 'Mein Lebenslauf' },
+  'home.cv.subtitle': { en: 'Available in English and German', de: 'Auf Englisch und Deutsch verfügbar' },
   'home.about': { en: 'About Me', de: 'Über mich' },
   'home.aboutLead': {
     en: 'Get to know me',
