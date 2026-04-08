@@ -56,6 +56,8 @@ export default function TerminalCard() {
           <span className="text-[#64748b]">, </span>
           <span className="text-[#38bdf8]">&quot;Power BI&quot;</span>
           <span className="text-[#64748b]">, </span>
+          <span className="text-[#38bdf8]">&quot;Fabric&quot;</span>
+          <span className="text-[#64748b]">, </span>
           <span className="text-[#38bdf8]">&quot;React&quot;</span>
           <span className="text-[#64748b]">, </span>
           <span className="text-[#38bdf8]">&quot;Data Analysis&quot;</span>

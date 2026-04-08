@@ -43,6 +43,7 @@ export default function HomePage() {
         { name: 'Power Apps', level: 95 },
         { name: 'Power Automate', level: 90 },
         { name: 'Power BI', level: 88 },
+        { name: 'Microsoft Fabric', level: 80 },
         { name: 'SharePoint Online', level: 85 },
         { name: 'PCF Components', level: 82 },
       ],
@@ -226,7 +227,7 @@ export default function HomePage() {
                 {t('home.aboutText')}
               </p>
               <div className="flex flex-wrap gap-3">
-                {['Power Apps', 'Power BI', 'React', 'Python', 'SQL', 'TypeScript'].map(s => (
+                {['Power Apps', 'Power BI', 'Fabric', 'React', 'Python', 'SQL', 'TypeScript'].map(s => (
                   <span key={s} className="skill-badge">{s}</span>
                 ))}
               </div>
