@@ -53,6 +53,9 @@ const translations: Record<string, Record<Lang, string>> = {
   'home.cat.frontend': { en: 'Frontend', de: 'Frontend' },
   'home.cat.backend': { en: 'Backend & Data', de: 'Backend & Daten' },
   'home.cat.tools': { en: 'Tools & Others', de: 'Tools & Sonstiges' },
+  'home.tier.core': { en: 'Core — daily driver', de: 'Kern — täglicher Einsatz' },
+  'home.tier.strong': { en: 'Strong — frequent use', de: 'Stark — häufiger Einsatz' },
+  'home.tier.familiar': { en: 'Familiar — working knowledge', de: 'Vertraut — Grundkenntnisse' },
   'home.certificationsLead': {
     en: 'Industry recognized credentials',
     de: 'Branchenanerkannte Nachweise',

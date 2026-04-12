@@ -8,7 +8,7 @@ import SectionHeading from '@/components/SectionHeading';
 import ParticleNetwork from '@/components/ParticleNetwork';
 import TypeWriter from '@/components/TypeWriter';
 import AnimatedCounter from '@/components/AnimatedCounter';
-import SkillCategory from '@/components/SkillCategory';
+import SkillCategory, { type SkillTier } from '@/components/SkillCategory';
 import TerminalCard from '@/components/TerminalCard';
 
 export default function HomePage() {
@@ -36,46 +36,46 @@ export default function HomePage() {
   const featured = projects[0];
   const rest = projects.slice(1);
 
-  const skillCategories = [
+  const skillCategories: { icon: string; titleKey: string; skills: { name: string; tier: SkillTier }[] }[] = [
     {
       icon: '⚡', titleKey: 'home.cat.microsoft',
       skills: [
-        { name: 'Power Apps', level: 95 },
-        { name: 'Power Automate', level: 90 },
-        { name: 'Power BI', level: 88 },
-        { name: 'Microsoft Fabric', level: 80 },
-        { name: 'SharePoint Online', level: 85 },
-        { name: 'PCF Components', level: 82 },
+        { name: 'Power Apps', tier: 'core' },
+        { name: 'Power Automate', tier: 'core' },
+        { name: 'Power BI', tier: 'core' },
+        { name: 'Microsoft Fabric', tier: 'strong' },
+        { name: 'SharePoint Online', tier: 'core' },
+        { name: 'PCF Components', tier: 'strong' },
       ],
     },
     {
       icon: '🎨', titleKey: 'home.cat.frontend',
       skills: [
-        { name: 'React / Next.js', level: 85 },
-        { name: 'TypeScript', level: 82 },
-        { name: 'Tailwind CSS', level: 80 },
-        { name: 'FluentUI', level: 78 },
-        { name: 'HTML / CSS', level: 90 },
+        { name: 'React / Next.js', tier: 'core' },
+        { name: 'TypeScript', tier: 'strong' },
+        { name: 'Tailwind CSS', tier: 'strong' },
+        { name: 'FluentUI', tier: 'strong' },
+        { name: 'HTML / CSS', tier: 'core' },
       ],
     },
     {
       icon: '🔧', titleKey: 'home.cat.backend',
       skills: [
-        { name: 'Python / Flask', level: 80 },
-        { name: 'SQL Server', level: 85 },
-        { name: 'REST APIs', level: 82 },
-        { name: 'Data Modeling', level: 80 },
-        { name: 'Office Scripts', level: 78 },
+        { name: 'Python / Flask', tier: 'strong' },
+        { name: 'SQL Server', tier: 'core' },
+        { name: 'REST APIs', tier: 'strong' },
+        { name: 'Data Modeling', tier: 'strong' },
+        { name: 'Office Scripts', tier: 'familiar' },
       ],
     },
     {
       icon: '🛠', titleKey: 'home.cat.tools',
       skills: [
-        { name: 'Git / GitHub', level: 85 },
-        { name: 'Flutter / Dart', level: 65 },
-        { name: 'AI / LLMs', level: 75 },
-        { name: 'Jupyter Notebooks', level: 78 },
-        { name: 'npm / CLI Tools', level: 80 },
+        { name: 'Git / GitHub', tier: 'core' },
+        { name: 'Flutter / Dart', tier: 'familiar' },
+        { name: 'AI / LLMs', tier: 'strong' },
+        { name: 'Jupyter Notebooks', tier: 'strong' },
+        { name: 'npm / CLI Tools', tier: 'strong' },
       ],
     },
   ];
@@ -245,6 +245,14 @@ export default function HomePage() {
         <section id="skills">
           <div className="section-tag">{t('home.skillsLead')}</div>
           <SectionHeading>{t('home.skills')}</SectionHeading>
+
+          {/* Tier legend */}
+          <div className="flex flex-wrap items-center gap-4 mb-6 text-xs text-[#64748b]">
+            <span className="inline-flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-[#38bdf8]" />{t('home.tier.core')}</span>
+            <span className="inline-flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-[#818cf8]" />{t('home.tier.strong')}</span>
+            <span className="inline-flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-[#64748b]" />{t('home.tier.familiar')}</span>
+          </div>
+
           <div className="grid sm:grid-cols-2 gap-5">
             {skillCategories.map((cat, i) => (
               <SkillCategory
