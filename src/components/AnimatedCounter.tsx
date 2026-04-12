@@ -48,7 +48,7 @@ export default function AnimatedCounter({ target, suffix = '', label }: Animated
       <div className="text-3xl sm:text-4xl font-bold gradient-text font-mono tabular-nums">
         {count}{suffix}
       </div>
-      <div className="text-sm text-[#64748b] mt-1">{label}</div>
+      <div className="text-sm mt-1" style={{ color: 'var(--text-faint)' }}>{label}</div>
     </div>
   );
 }

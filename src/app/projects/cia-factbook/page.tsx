@@ -23,11 +23,11 @@ export default function CIAFactbookPage() {
       >
         <div className="flex flex-wrap gap-2 justify-center mb-4">
           {['SQL', 'Jupyter Notebook', 'SQLite', 'Data Analysis'].map(tag => (
-            <span key={tag} className="text-xs px-2.5 py-0.5 rounded-full bg-[#1e293b] text-[#94a3b8] border border-[#1e293b]">{tag}</span>
+            <span key={tag} className="text-xs px-2.5 py-0.5 rounded-full tag-chip">{tag}</span>
           ))}
         </div>
-        <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">{t('cia.h1')}</h1>
-        <p className="text-[#94a3b8] text-lg">{t('cia.subtitle')}</p>
+        <h1 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-3">{t('cia.h1')}</h1>
+        <p className="text-[var(--text-muted)] text-lg">{t('cia.subtitle')}</p>
       </motion.section>
 
       <FactbookPopulationSection />
@@ -38,17 +38,17 @@ export default function CIAFactbookPage() {
 
       {/* CTA & Back */}
       <section className="max-w-4xl mx-auto px-6 py-16 text-center space-y-6">
-        <h3 className="text-xl font-semibold text-white">{t('cia.notebook.h3')}</h3>
+        <h3 className="text-xl font-semibold text-[var(--text-primary)]">{t('cia.notebook.h3')}</h3>
         <a
           href="https://github.com/sudarshanAw/cia-factbook-analysis/blob/master/CIA%2BFactbook.ipynb"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-[#38bdf8] to-[#818cf8] text-white font-semibold text-sm hover:shadow-lg hover:shadow-[#38bdf8]/20 transition-all hover:-translate-y-0.5"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg gradient-btn text-white font-semibold text-sm hover:shadow-lg hover:shadow-[var(--accent)]/20 transition-all hover:-translate-y-0.5"
         >
           {t('cia.notebook.btn')}
         </a>
         <div className="pt-8">
-          <Link href="/" className="inline-flex items-center gap-1 text-sm text-[#64748b] hover:text-[#38bdf8] transition-colors">
+          <Link href="/" className="inline-flex items-center gap-1 text-sm text-[var(--text-faint)] hover:text-[var(--accent)] transition-colors">
             {t('nav.backHome')}
           </Link>
         </div>

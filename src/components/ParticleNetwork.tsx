@@ -23,7 +23,18 @@ export default function ParticleNetwork() {
     let particles: Particle[] = [];
     const PARTICLE_COUNT = 60;
     const CONNECTION_DIST = 140;
-    const ACCENT = { r: 56, g: 189, b: 248 }; // #38bdf8
+
+    const getAccent = () => {
+      const theme = document.documentElement.getAttribute('data-theme');
+      return theme === 'light'
+        ? { r: 2, g: 132, b: 199 }   // #0284c7
+        : { r: 56, g: 189, b: 248 };  // #38bdf8
+    };
+
+    const getOpacity = () => {
+      const theme = document.documentElement.getAttribute('data-theme');
+      return theme === 'light' ? 0.35 : 0.7;
+    };
 
     const resize = () => {
       canvas.width = canvas.offsetWidth * window.devicePixelRatio;
@@ -48,6 +59,9 @@ export default function ParticleNetwork() {
       const w = canvas.offsetWidth;
       const h = canvas.offsetHeight;
       ctx.clearRect(0, 0, w, h);
+
+      const ACCENT = getAccent();
+      canvas.style.opacity = String(getOpacity());
 
       // Update positions
       for (const p of particles) {
@@ -100,7 +114,6 @@ export default function ParticleNetwork() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full pointer-events-none"
-      style={{ opacity: 0.7 }}
     />
   );
 }

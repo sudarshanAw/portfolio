@@ -12,8 +12,8 @@ export default function SectionHeading({ children, id }: { children: React.React
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="text-2xl font-bold text-white whitespace-nowrap">{children}</h2>
-      <div className="h-px flex-1 bg-gradient-to-r from-[#1e293b] to-transparent" />
+      <h2 className="text-2xl font-bold whitespace-nowrap" style={{ color: 'var(--text-primary)' }}>{children}</h2>
+      <div className="h-px flex-1" style={{ background: `linear-gradient(90deg, var(--border), transparent)` }} />
     </motion.div>
   );
 }

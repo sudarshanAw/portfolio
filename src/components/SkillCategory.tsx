@@ -16,27 +16,24 @@ interface SkillCategoryProps {
   delay?: number;
 }
 
-const tierConfig: Record<SkillTier, { label: { en: string; de: string }; dot: string; ring: string; bg: string; text: string }> = {
+const tierStyles: Record<SkillTier, { dotColor: string; bgColor: string; hoverBg: string; textColor: string }> = {
   core: {
-    label: { en: 'Core', de: 'Kern' },
-    dot: 'bg-[#38bdf8]',
-    ring: 'ring-[#38bdf8]/30',
-    bg: 'bg-[#38bdf8]/8 hover:bg-[#38bdf8]/15',
-    text: 'text-[#38bdf8]',
+    dotColor: 'var(--accent)',
+    bgColor: 'color-mix(in srgb, var(--accent) 8%, transparent)',
+    hoverBg: 'color-mix(in srgb, var(--accent) 15%, transparent)',
+    textColor: 'var(--accent)',
   },
   strong: {
-    label: { en: 'Strong', de: 'Stark' },
-    dot: 'bg-[#818cf8]',
-    ring: 'ring-[#818cf8]/30',
-    bg: 'bg-[#818cf8]/8 hover:bg-[#818cf8]/15',
-    text: 'text-[#818cf8]',
+    dotColor: 'var(--accent-2)',
+    bgColor: 'color-mix(in srgb, var(--accent-2) 8%, transparent)',
+    hoverBg: 'color-mix(in srgb, var(--accent-2) 15%, transparent)',
+    textColor: 'var(--accent-2)',
   },
   familiar: {
-    label: { en: 'Familiar', de: 'Vertraut' },
-    dot: 'bg-[#64748b]',
-    ring: 'ring-[#64748b]/20',
-    bg: 'bg-[#64748b]/8 hover:bg-[#64748b]/12',
-    text: 'text-[#94a3b8]',
+    dotColor: 'var(--text-faint)',
+    bgColor: 'color-mix(in srgb, var(--text-faint) 8%, transparent)',
+    hoverBg: 'color-mix(in srgb, var(--text-faint) 12%, transparent)',
+    textColor: 'var(--text-muted)',
   },
 };
 
@@ -52,13 +49,13 @@ export default function SkillCategory({ icon, title, skills, delay = 0 }: SkillC
       {/* Category header */}
       <div className="flex items-center gap-2 mb-4">
         <span className="text-lg">{icon}</span>
-        <h3 className="text-sm font-semibold text-white uppercase tracking-wider">{title}</h3>
+        <h3 className="text-sm font-semibold uppercase tracking-wider" style={{ color: 'var(--text-primary)' }}>{title}</h3>
       </div>
 
       {/* Skill chips */}
       <div className="flex flex-wrap gap-2">
         {skills.map((skill, i) => {
-          const cfg = tierConfig[skill.tier];
+          const s = tierStyles[skill.tier];
           return (
             <motion.span
               key={skill.name}
@@ -66,15 +63,23 @@ export default function SkillCategory({ icon, title, skills, delay = 0 }: SkillC
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: delay + i * 0.04 }}
-              className={`
-                inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium
-                border border-[#162033] transition-all duration-300 cursor-default
-                ${cfg.bg} ${cfg.text}
-                hover:border-current/20 hover:-translate-y-0.5
-                hover:shadow-sm
-              `}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium cursor-default transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm"
+              style={{
+                background: s.bgColor,
+                color: s.textColor,
+                border: '1px solid var(--skill-chip-border)',
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.background = s.hoverBg;
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.background = s.bgColor;
+              }}
             >
-              <span className={`w-1.5 h-1.5 rounded-full ${cfg.dot} shrink-0`} />
+              <span
+                className="w-1.5 h-1.5 rounded-full shrink-0"
+                style={{ background: s.dotColor }}
+              />
               {skill.name}
             </motion.span>
           );

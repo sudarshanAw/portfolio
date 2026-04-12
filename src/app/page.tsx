@@ -100,14 +100,17 @@ export default function HomePage() {
             className="mb-8"
           >
             <div className="relative w-28 h-28 mx-auto">
-              <div className="absolute -inset-1.5 bg-gradient-to-br from-[#38bdf8] to-[#818cf8] rounded-full opacity-50 blur-md" />
-              <div className="absolute -inset-0.5 bg-gradient-to-br from-[#38bdf8] to-[#818cf8] rounded-full opacity-80" />
+              <div className="absolute -inset-1.5 rounded-full opacity-50 blur-md"
+                style={{ background: `linear-gradient(to bottom right, var(--gradient-start), var(--gradient-end))` }} />
+              <div className="absolute -inset-0.5 rounded-full opacity-80"
+                style={{ background: `linear-gradient(to bottom right, var(--gradient-start), var(--gradient-end))` }} />
               <Image
                 src="/me.jpg"
                 alt="Sudarshan Awasthi"
                 width={320}
                 height={320}
-                className="relative rounded-full object-cover w-28 h-28 border-2 border-[#060a13]"
+                className="relative rounded-full object-cover w-28 h-28"
+                style={{ border: '2px solid var(--background)' }}
                 priority
                 quality={90}
               />
@@ -138,7 +141,8 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="text-xl sm:text-2xl text-[#94a3b8] font-medium mb-6 h-9"
+            className="text-xl sm:text-2xl font-medium mb-6 h-9"
+            style={{ color: 'var(--text-muted)' }}
           >
             <TypeWriter words={roles} className="font-mono" />
           </motion.div>
@@ -148,7 +152,8 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
-            className="text-[#64748b] max-w-xl mx-auto mb-10 leading-relaxed"
+            className="max-w-xl mx-auto mb-10 leading-relaxed"
+            style={{ color: 'var(--text-faint)' }}
           >
             {t('home.subtitle')}
           </motion.p>
@@ -160,13 +165,22 @@ export default function HomePage() {
             transition={{ delay: 0.7, duration: 0.5 }}
             className="flex flex-wrap gap-4 justify-center mb-10"
           >
-            <a href="#projects" className="group relative px-7 py-3 rounded-lg bg-gradient-to-r from-[#38bdf8] to-[#818cf8] text-white font-semibold text-sm overflow-hidden transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#38bdf8]/20">
+            <a href="#projects"
+              className="group relative px-7 py-3 rounded-lg text-white font-semibold text-sm overflow-hidden transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              style={{ background: `linear-gradient(to right, var(--gradient-start), var(--gradient-end))` }}
+            >
               <span className="relative z-10">{t('home.cta.projects')}</span>
             </a>
-            <a href="#contact" className="px-7 py-3 rounded-lg border border-[#162033] text-[#94a3b8] font-semibold text-sm hover:border-[#38bdf8]/30 hover:text-white transition-all hover:-translate-y-0.5">
+            <a href="#contact"
+              className="px-7 py-3 rounded-lg font-semibold text-sm transition-all hover:-translate-y-0.5"
+              style={{ border: '1px solid var(--border)', color: 'var(--text-muted)' }}
+            >
               {t('home.cta.contact')}
             </a>
-            <a href="/SudarshanAwasthi_EN.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-7 py-3 rounded-lg border border-[#162033] text-[#94a3b8] font-semibold text-sm hover:border-[#38bdf8]/30 hover:text-white transition-all hover:-translate-y-0.5">
+            <a href="/SudarshanAwasthi_EN.pdf" target="_blank" rel="noopener noreferrer"
+              className="flex items-center gap-2 px-7 py-3 rounded-lg font-semibold text-sm transition-all hover:-translate-y-0.5"
+              style={{ border: '1px solid var(--border)', color: 'var(--text-muted)' }}
+            >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
               CV
             </a>
@@ -177,10 +191,11 @@ export default function HomePage() {
             initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             transition={{ delay: 0.85, duration: 0.5 }}
             className="flex gap-5 justify-center"
+            style={{ color: 'var(--text-faint)' }}
           >
-            <a href="https://github.com/sudarshanAw" target="_blank" rel="noopener noreferrer" className="text-[#64748b] hover:text-white transition-colors" aria-label="GitHub"><FaGithub className="w-5 h-5" /></a>
-            <a href="https://www.linkedin.com/in/sudarshan-awasthi/" target="_blank" rel="noopener noreferrer" className="text-[#64748b] hover:text-[#38bdf8] transition-colors" aria-label="LinkedIn"><FaLinkedin className="w-5 h-5" /></a>
-            <a href="mailto:sudarshanawasthi47@gmail.com" className="text-[#64748b] hover:text-[#818cf8] transition-colors" aria-label="Email"><FaEnvelope className="w-5 h-5" /></a>
+            <a href="https://github.com/sudarshanAw" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="GitHub"><FaGithub className="w-5 h-5" /></a>
+            <a href="https://www.linkedin.com/in/sudarshan-awasthi/" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" style={{ color: 'var(--accent)' }} aria-label="LinkedIn"><FaLinkedin className="w-5 h-5" /></a>
+            <a href="mailto:sudarshanawasthi47@gmail.com" className="hover:opacity-70 transition-opacity" style={{ color: 'var(--accent-2)' }} aria-label="Email"><FaEnvelope className="w-5 h-5" /></a>
           </motion.div>
         </div>
 
@@ -189,9 +204,10 @@ export default function HomePage() {
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.3 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
-          <div className="w-5 h-8 rounded-full border-2 border-[#162033] flex justify-center pt-1.5">
+          <div className="w-5 h-8 rounded-full flex justify-center pt-1.5" style={{ border: '2px solid var(--border)' }}>
             <motion.div
-              className="w-1 h-2 rounded-full bg-[#38bdf8]"
+              className="w-1 h-2 rounded-full"
+              style={{ background: 'var(--accent)' }}
               animate={{ y: [0, 6, 0] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
             />
@@ -202,7 +218,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════
           STATS BAR
       ═══════════════════════════════════════════════════════ */}
-      <section className="border-y border-[#162033] bg-[#0c1222]/60 backdrop-blur-sm">
+      <section className="backdrop-blur-sm" style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: 'var(--stat-bar-bg)' }}>
         <div className="max-w-4xl mx-auto px-6 py-10 grid grid-cols-3 gap-6">
           <AnimatedCounter target={5} label={t('home.stat.certs')} />
           <AnimatedCounter target={20} suffix="+" label={t('home.stat.tech')} />
@@ -227,7 +243,7 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.15 }}
               className="space-y-6"
             >
-              <p className="text-[#94a3b8] leading-relaxed text-lg">
+              <p className="leading-relaxed text-lg" style={{ color: 'var(--text-muted)' }}>
                 {t('home.aboutText')}
               </p>
               <div className="flex flex-wrap gap-3">
@@ -247,10 +263,10 @@ export default function HomePage() {
           <SectionHeading>{t('home.skills')}</SectionHeading>
 
           {/* Tier legend */}
-          <div className="flex flex-wrap items-center gap-4 mb-6 text-xs text-[#64748b]">
-            <span className="inline-flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-[#38bdf8]" />{t('home.tier.core')}</span>
-            <span className="inline-flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-[#818cf8]" />{t('home.tier.strong')}</span>
-            <span className="inline-flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-[#64748b]" />{t('home.tier.familiar')}</span>
+          <div className="flex flex-wrap items-center gap-4 mb-6 text-xs" style={{ color: 'var(--text-faint)' }}>
+            <span className="inline-flex items-center gap-1.5"><span className="w-2 h-2 rounded-full" style={{ background: 'var(--accent)' }} />{t('home.tier.core')}</span>
+            <span className="inline-flex items-center gap-1.5"><span className="w-2 h-2 rounded-full" style={{ background: 'var(--accent-2)' }} />{t('home.tier.strong')}</span>
+            <span className="inline-flex items-center gap-1.5"><span className="w-2 h-2 rounded-full" style={{ background: 'var(--text-faint)' }} />{t('home.tier.familiar')}</span>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-5">
@@ -286,8 +302,8 @@ export default function HomePage() {
                 transition={{ duration: 0.4, delay: i * 0.08 }}
               >
                 <Image src={cert.src} alt={cert.alt} width={72} height={72} />
-                <span className="text-xs font-bold text-white group-hover:text-[#38bdf8] transition-colors">{cert.label}</span>
-                <span className="text-[10px] text-[#64748b] leading-tight">{cert.desc}</span>
+                <span className="text-xs font-bold transition-colors" style={{ color: 'var(--text-primary)' }}>{cert.label}</span>
+                <span className="text-[10px] leading-tight" style={{ color: 'var(--text-faint)' }}>{cert.desc}</span>
               </motion.a>
             ))}
           </div>
@@ -318,18 +334,20 @@ export default function HomePage() {
                   height={500}
                   className="w-full h-64 md:h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#0c1222] hidden md:block" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0c1222] via-transparent to-transparent md:hidden" />
+                <div className="absolute inset-0 hidden md:block" style={{ background: `linear-gradient(to right, transparent, transparent 40%, var(--surface))` }} />
+                <div className="absolute inset-0 md:hidden" style={{ background: `linear-gradient(to top, var(--surface), transparent)` }} />
               </div>
               <div className="p-6 md:p-8 flex flex-col justify-center">
                 <div className="flex flex-wrap gap-2 mb-3">
                   {featured.tags.map(tag => (
-                    <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-[#162033] text-[#38bdf8] border border-[#162033] font-semibold uppercase tracking-wider">{tag}</span>
+                    <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider"
+                      style={{ background: 'var(--tag-bg)', color: 'var(--accent)', border: '1px solid var(--tag-bg)' }}
+                    >{tag}</span>
                   ))}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#38bdf8] transition-colors">{featured.title}</h3>
-                <p className="text-sm text-[#64748b] leading-relaxed mb-5">{featured.desc}</p>
-                <span className="text-sm font-semibold text-[#38bdf8] group-hover:translate-x-1 transition-transform inline-block">
+                <h3 className="text-xl font-bold mb-3 transition-colors" style={{ color: 'var(--text-primary)' }}>{featured.title}</h3>
+                <p className="text-sm leading-relaxed mb-5" style={{ color: 'var(--text-faint)' }}>{featured.desc}</p>
+                <span className="text-sm font-semibold group-hover:translate-x-1 transition-transform inline-block" style={{ color: 'var(--accent)' }}>
                   {t('home.viewProject')}
                 </span>
               </div>
@@ -356,16 +374,18 @@ export default function HomePage() {
                     height={380}
                     className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0c1222] via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 opacity-80" style={{ background: `linear-gradient(to top, var(--surface), transparent)` }} />
                 </div>
                 <div className="relative z-10 p-4 space-y-2">
                   <div className="flex flex-wrap gap-1.5">
                     {project.tags.map(tag => (
-                      <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-[#162033] text-[#94a3b8] border border-[#162033]">{tag}</span>
+                      <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full"
+                        style={{ background: 'var(--tag-bg)', color: 'var(--text-muted)', border: '1px solid var(--tag-bg)' }}
+                      >{tag}</span>
                     ))}
                   </div>
-                  <h3 className="text-sm font-semibold text-white group-hover:text-[#38bdf8] transition-colors">{project.title}</h3>
-                  <p className="text-xs text-[#64748b] leading-relaxed line-clamp-2">{project.desc}</p>
+                  <h3 className="text-sm font-semibold transition-colors" style={{ color: 'var(--text-primary)' }}>{project.title}</h3>
+                  <p className="text-xs leading-relaxed line-clamp-2" style={{ color: 'var(--text-faint)' }}>{project.desc}</p>
                 </div>
               </motion.a>
             ))}
@@ -386,20 +406,23 @@ export default function HomePage() {
           >
             <div className="flex flex-col sm:flex-row items-center gap-6">
               {/* Document icon */}
-              <div className="shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-[#38bdf8]/20 to-[#818cf8]/20 border border-[#162033] flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-[#38bdf8]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="shrink-0 w-14 h-14 rounded-xl flex items-center justify-center"
+                style={{ background: `linear-gradient(to bottom right, color-mix(in srgb, var(--accent) 20%, transparent), color-mix(in srgb, var(--accent-2) 20%, transparent))`, border: '1px solid var(--border)' }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" style={{ color: 'var(--accent)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
               <div className="flex-1 text-center sm:text-left">
                 <p className="code-comment mb-1">{'// ' + t('home.cv.subtitle')}</p>
-                <p className="text-white font-semibold">Sudarshan Awasthi — CV / Lebenslauf</p>
+                <p className="font-semibold" style={{ color: 'var(--text-primary)' }}>Sudarshan Awasthi — CV / Lebenslauf</p>
               </div>
               <div className="flex flex-wrap gap-3 shrink-0">
                 <a
                   href="/SudarshanAwasthi_EN.pdf"
                   target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#38bdf8] to-[#818cf8] text-white font-semibold text-sm hover:shadow-lg hover:shadow-[#38bdf8]/20 transition-all hover:-translate-y-0.5"
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-white font-semibold text-sm hover:shadow-lg transition-all hover:-translate-y-0.5"
+                  style={{ background: `linear-gradient(to right, var(--gradient-start), var(--gradient-end))` }}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
                   {t('home.cta.cv.en')}
@@ -407,7 +430,8 @@ export default function HomePage() {
                 <a
                   href="/SudarshanAwasthi_DE.pdf"
                   target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#162033] text-[#94a3b8] font-semibold text-sm hover:border-[#38bdf8]/30 hover:text-white transition-all hover:-translate-y-0.5"
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-all hover:-translate-y-0.5"
+                  style={{ border: '1px solid var(--border)', color: 'var(--text-muted)' }}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
                   {t('home.cta.cv.de')}
@@ -430,11 +454,12 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
           >
             <p className="code-comment mb-4">{'// ' + (lang === 'de' ? 'Bereit für neue Herausforderungen' : 'Open for new opportunities')}</p>
-            <p className="text-[#94a3b8] text-lg mb-8">{t('home.contactText')}</p>
+            <p className="text-lg mb-8" style={{ color: 'var(--text-muted)' }}>{t('home.contactText')}</p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a
                 href="mailto:sudarshanawasthi47@gmail.com"
-                className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-[#38bdf8] to-[#818cf8] text-white font-semibold text-sm hover:shadow-lg hover:shadow-[#38bdf8]/20 transition-all hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-lg text-white font-semibold text-sm hover:shadow-lg transition-all hover:-translate-y-0.5"
+                style={{ background: `linear-gradient(to right, var(--gradient-start), var(--gradient-end))` }}
               >
                 <FaEnvelope className="w-4 h-4" />
                 {t('home.contactBtn')}
@@ -443,7 +468,8 @@ export default function HomePage() {
                 href="https://www.linkedin.com/in/sudarshan-awasthi/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-[#162033] text-[#94a3b8] font-semibold text-sm hover:border-[#38bdf8]/30 hover:text-white transition-all hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-lg font-semibold text-sm transition-all hover:-translate-y-0.5"
+                style={{ border: '1px solid var(--border)', color: 'var(--text-muted)' }}
               >
                 <FaLinkedin className="w-4 h-4" />
                 LinkedIn
@@ -456,12 +482,12 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════
           FOOTER
       ═══════════════════════════════════════════════════════ */}
-      <footer className="border-t border-[#162033] py-8 mt-12">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[#64748b]">
+      <footer className="py-8 mt-12" style={{ borderTop: '1px solid var(--border)' }}>
+        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm" style={{ color: 'var(--text-faint)' }}>
           <p className="code-comment">{t('home.footer')}</p>
           <div className="flex gap-5">
-            <a href="https://github.com/sudarshanAw" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><FaGithub className="w-4 h-4" /></a>
-            <a href="https://www.linkedin.com/in/sudarshan-awasthi/" target="_blank" rel="noopener noreferrer" className="hover:text-[#38bdf8] transition-colors"><FaLinkedin className="w-4 h-4" /></a>
+            <a href="https://github.com/sudarshanAw" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity"><FaGithub className="w-4 h-4" /></a>
+            <a href="https://www.linkedin.com/in/sudarshan-awasthi/" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" style={{ color: 'var(--accent)' }}><FaLinkedin className="w-4 h-4" /></a>
           </div>
         </div>
       </footer>
