@@ -48,6 +48,7 @@ export default function NavBar() {
             style={{ color: 'var(--text-muted)' }}
           >
             <a href="#about" className="hover:opacity-80 transition-opacity" style={{ color: 'var(--text-muted)' }}>{t('nav.about')}</a>
+            <a href="#bookshelf" className="hover:opacity-80 transition-opacity" style={{ color: 'var(--text-muted)' }}>{t('nav.bookshelf')}</a>
             <a href="#skills" className="hover:opacity-80 transition-opacity" style={{ color: 'var(--text-muted)' }}>{t('nav.skills')}</a>
             <a href="#certifications" className="hover:opacity-80 transition-opacity" style={{ color: 'var(--text-muted)' }}>{t('nav.certifications')}</a>
             <a href="#projects" className="hover:opacity-80 transition-opacity" style={{ color: 'var(--text-muted)' }}>{t('nav.projects')}</a>

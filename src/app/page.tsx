@@ -10,6 +10,7 @@ import TypeWriter from '@/components/TypeWriter';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import SkillCategory, { type SkillTier } from '@/components/SkillCategory';
 import TerminalCard from '@/components/TerminalCard';
+import BookShelf from '@/components/BookShelf';
 
 export default function HomePage() {
   const { t, lang } = useLang();
@@ -253,6 +254,28 @@ export default function HomePage() {
               </div>
             </motion.div>
           </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════════════════
+            BOOKSHELF
+        ═══════════════════════════════════════════════════════ */}
+        <section id="bookshelf">
+          <div className="section-tag">{t('home.bookshelfLead')}</div>
+          <SectionHeading>{t('home.bookshelf')}</SectionHeading>
+          <motion.p
+            className="mb-8 text-sm leading-relaxed max-w-2xl"
+            style={{ color: 'var(--text-faint)' }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+          >
+            {t('home.bookshelf.note')}
+          </motion.p>
+          <BookShelf
+            labelCurrently={t('home.bookshelf.currently')}
+            labelFinished={t('home.bookshelf.finished')}
+          />
         </section>
 
         {/* ═══════════════════════════════════════════════════════

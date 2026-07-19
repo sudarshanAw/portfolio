@@ -17,6 +17,7 @@ const translations: Record<string, Record<Lang, string>> = {
   'nav.skills': { en: 'Skills', de: 'Fähigkeiten' },
   'nav.certifications': { en: 'Certifications', de: 'Zertifizierungen' },
   'nav.projects': { en: 'Projects', de: 'Projekte' },
+  'nav.bookshelf': { en: 'Bookshelf', de: 'Bücher' },
 
   // ─── Home page ───────────────────────────────────────────────────────────
   'home.greeting': { en: "Hello, I'm", de: 'Hallo, ich bin' },
@@ -44,6 +45,15 @@ const translations: Record<string, Record<Lang, string>> = {
     en: 'A software developer based in Germany with deep expertise in the Microsoft ecosystem. I specialize in Power Apps, Power Automate, Power BI, and SharePoint, while also building full-stack web applications with React and Next.js. I love turning complex business requirements into elegant, automated solutions.',
     de: 'Ein Softwareentwickler mit Sitz in Deutschland und fundierter Expertise im Microsoft-Ökosystem. Ich bin spezialisiert auf Power Apps, Power Automate, Power BI und SharePoint und entwickle gleichzeitig Full-Stack-Webanwendungen mit React und Next.js. Ich verwandle komplexe Geschäftsanforderungen gerne in elegante, automatisierte Lösungen.',
   },
+  'home.bookshelf': { en: 'Bookshelf', de: 'Bücher' },
+  'home.bookshelfLead': { en: 'Beyond the screen', de: 'Abseits des Bildschirms' },
+  'home.bookshelf.currently': { en: 'Currently Reading', de: 'Aktuell am Lesen' },
+  'home.bookshelf.finished': { en: 'Finished', de: 'Gelesen' },
+  'home.bookshelf.note': {
+    en: 'Reading is how I invest in myself outside of code. These books shaped the way I think.',
+    de: 'Lesen ist meine Investition in mich selbst abseits des Codes. Diese Bücher haben meine Denkweise geprägt.',
+  },
+
   'home.skills': { en: 'Tech Stack', de: 'Tech-Stack' },
   'home.skillsLead': {
     en: 'Technologies I work with',
